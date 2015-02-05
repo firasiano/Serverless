@@ -1,0 +1,77 @@
+body{
+/*	background-image: url('http://p1.pichost.me/i/17/1398230.jpg')
+*/
+	position: relative;
+}
+
+.container{
+	margin-top: 70px;
+	display: inline;
+}
+
+section{
+}
+
+.imageContainer{
+	width: 400px;
+	height: 400px;
+	position: relative;
+	text-align: center;
+	padding: 2rem;
+}
+
+@media screen and (max-width: 350px) {
+    .imageContainer {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imageContainer {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.fileSelector{
+	z-index: 2;
+	position: absolute;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.imageDisplay{
+	position: absolute;
+	height: 100%;
+}
+
+.selectTxt{
+	padding-top: 150px;
+	padding-left: 100px;
+	position: absolute;
+	z-index: 2;
+}
+
+.myGroup{
+	padding: 2rem;
+}
+
+.interaction-page{
+	padding: 1rem;
+	overflow-x: hidden !important;
+}
+
+input{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid gray;
+	margin-bottom: 1rem;
+}
+
+.main-button{
+
+}
+

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://code.angularjs.org/1.4.0-beta.0/angular.min.js"> </script>
+    <script
+    src="https://code.angularjs.org/1.4.0-beta.0/angular-route.min.js"></script>
+    <script
+    src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/main.css">
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src = ""></script>
+    <script src = ""></script>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-default" ng-controller="MainController">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <!-- your branding here -->
+        </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" collapse="navbarCollapsed">
+          <!-- your normal collapsable content here -->
+            <ul ng-hide="user" class="nav navbar-nav navbar-right">
+                <p class="navbar-text">Sign In</p>
+                <li>
+                    <a href="#" ng-click="signIn('google'); $event.preventDefault()">
+                        <div ng-hide="true">
+                            <div ng-hide="true" google-signin id="googleSigninButton"
+                            client-id='74975635563-7jsno8ee4hjba1gss5366p34ndl507io'
+                            after-signin="signedIn(oauth)">
+                        </div>
+                        </div>Google
+                    </a>
+                </li>
+
+                <li>
+                    <a ng-click="signIn('facebook'); $event.preventDefault()" href="#">Facebook</a>
+                </li>
+                
+
+            </ul>
+            
+            <ul ng-show="user" class="nav navbar-nav navbar-right"> 
+                <li>
+                    <a href="#" ng-click="signOut()">Sign Out</a>
+                </li>
+                <li>
+                    <a ng-click="goToUploading(); $event.preventDefault()" href="#">upload item</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<div ng-view></div>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers.js"></script>
+<script src="scripts/services.js"></script>
+<script src="scripts/directives.js"></script>
+<script type="text/javascript" src="scripts/directives/carousel.js"></script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="scripts/facebook_init.js"></script>
+
+<script type="text/javascript">
+(function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js?onload=onLoadCallback';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+
+</div>
+</nav>
+
+
+</body>
+
+</html>

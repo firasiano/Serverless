@@ -1,0 +1,38 @@
+<div class="interaction-page" ng-controller="uploaderController">
+	<form ng-submit="uploadItem()" class="row">
+		<section class="col-md-6 col-sm-12 form-group myGroup">
+			<div class="imageContainer">
+				<p class="selectTxt"> Select Image</p>
+				<img class="imageDisplay form-control" name="image" ng-src="{{itemImageSrc}}" height="90%" width="90%"/>
+
+				<input class="fileSelector" type="file" accept="image/*" name="inputImage" value="select image" onchange="angular.element(this).scope().selectImage(this)"/>
+			</div>
+		</section>
+
+		<section class="col-md-6 col-sm-12 form-group myGroup">
+			<div class="imageContainer">
+				<label>
+					Price
+				</label>
+				<input class="form-control" type="text" name="price" ng-model="itemPrice"/>
+
+
+				<label>
+					Description
+				</label>
+				<textarea class="form-control" name="description" ng-model="itemDescription"></textarea>
+
+
+				<label>
+					Days for sale
+				</label>
+				<input class="form-control" type="number" name="days" ng-model="daysForSale"/>
+
+				<div class="main-button">
+					<input class="btn btn-primary" type="submit" value="Done"> 
+				</div>
+			</div>
+		</section>
+
+	</form>
+</div>

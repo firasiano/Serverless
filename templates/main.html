@@ -1,0 +1,67 @@
+<div class ="interaction-page">
+
+    <div class="container">
+
+    <mycarousel></mycarousel>
+        <div ng-show="user">
+            <pre>{{ user | json }}</pre>
+        </div>
+        <!-- ... -->
+        <div class="row">
+
+            <div class="col-md-6">
+                <input class="btn btn-primary" type="button" ng-click="goToUploading()" value="upload Item">
+            </div>
+    <!--     <div class="col-md-6">
+            <div file-upload="onFile(files)"></div>
+        </div> -->
+        <div ng-show="images">
+            <div class="col-sm-6 col-md-4"
+            ng-repeat="image in images">
+            <div class="thumbnail">
+                <img ng-click="sellImage(image)"
+                data-ng-src="{{image.itemUrl}}" />
+            </div>
+        </div>
+        </div>
+    </div>
+    <div ng-show="showCC">
+        <form ng-submit="submitPayment()">
+            <span ng-bind="errors"></span>
+            <span>Card Number</span>
+            <input type="text"
+            ng-minlength="16"
+            ng-maxlength="20"
+            size="20"
+            data-stripe="number"
+            ng-model="charge.number" />
+            <span>CVC</span>
+            <input type="text"
+            ng-minlength="3"
+            ng-maxlength="4"
+            data-stripe="cvc"
+            ng-model="charge.cvc" />
+            <span>Expiration (MM/YYYY)</span>
+            <input type="text"
+            ng-minlength="2"
+            ng-maxlength="2"
+            size="2"
+            data-stripe="exp_month"
+            ng-model="charge.exp_month" />
+            <span> / </span>
+            <input type="text"
+            ng-minlength="4"
+            ng-maxlength="4"
+            size="4"
+            data-stripe="exp-year"
+            ng-model="charge.exp_year" />
+            <input type="hidden"
+            name="email"
+            value="user.email" />
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+
+
+    </div>
+</div>
