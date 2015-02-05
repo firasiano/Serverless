@@ -11,6 +11,7 @@ Amazon web services used in here: IAM, DynamoDB, S3
 # How to use it?
 
 It's really simple:
+
 1- Clone Repo to your desktop.
 
 2- Navigate through terminal to the cloned Folder.
