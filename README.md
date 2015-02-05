@@ -12,9 +12,13 @@ Amazon web services used in here: IAM, DynamoDB, S3
 
 It's really simple:
 1- Clone Repo to your desktop.
+
 2- Navigate through terminal to the cloned Folder.
+
 3- run it like this: python -m SimpleHTTPServer 9000
+
 4- open the browser and goto localhost:9000.
+
 
 Enjoy!
 
